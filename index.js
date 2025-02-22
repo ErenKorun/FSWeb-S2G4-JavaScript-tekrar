@@ -100,28 +100,68 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+//const sayilarKopya = [...sayilar]
+//sayilarKopya.sort(function(a, b) {
+//  return a-b
+//});
 
-/* kodlar buraya */
+//enbuyuk = sayilarKopya[sayilarKopya.length - 1];
+//enkucuk = sayilarKopya[0]
+
+enkucuk = sayilar [0];
+enbuyuk = sayialr[0];
+
+for (const sayi of sayilar) {
+  if (sayi > enbuyuk) {
+    enbuyuk = sayi;
+  }
+  if (sayi < enkucuk) {
+    enkucuk = sayi
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+
+sayilar.forEach((sayi) => {
+  if(sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  }
+})
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucebolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
+
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekrarEdenSayilarObje = {};
+sayilar.forEach(sayi => {
+  if (!tekrarEdenSayilarObje[sayi]) {
+    tekrarEdenSayilarObje[sayi] = 1;
+  } else {
+    tekrarEdenSayilarObje[sayi]++
+  }
+});
+
+tekraredensayilar = []
+for (let key in tekrarEdenSayilarObje) {
+  const value = tekrarEdenSayilarObje[key];
+  if (value > 1){
+    tekraredensayilar.push(`${key} sayısı ${value} kere tekrar edilmiştir`)
+  }
+}
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
